@@ -2608,3 +2608,6 @@ MarowakPicFront:     INCBIN "pic/bmon/marowak.pic"
 MarowakPicBack:      INCBIN "pic/monback/marowakb.pic"
 ENDC
 
+SECTION "Debug Menu",ROMX,BANK[$38]
+
+INCLUDE "engine/debug.asm"

@@ -3231,6 +3231,9 @@ wEXPBarKeepFullFlag:: ds 1
 ; deed
 ENDC
 
+wDebugMenuID::		ds 1
+wDebugMenuCursorPos::	ds 1
+wDebugMenuParam::	ds 1
 
 SECTION "Stack", WRAMX[$df00], BANK[1]
 	ds $ff
