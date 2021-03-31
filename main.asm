@@ -168,6 +168,8 @@ ClipboardSprite:       INCBIN "gfx/sprites/clipboard.2bpp"
 SnorlaxSprite:         INCBIN "gfx/sprites/snorlax.2bpp"
 OldAmberSprite:        INCBIN "gfx/sprites/old_amber.2bpp"
 LyingOldManSprite:     INCBIN "gfx/sprites/lying_old_man.2bpp"
+GiovanniSprite:        INCBIN "gfx/sprites/giovanni.2bpp"
+RocketSprite:          INCBIN "gfx/sprites/rocket.2bpp"
 
 
 SECTION "Graphics", ROMX, BANK[GFX]
@@ -224,6 +226,7 @@ INCLUDE "engine/menu/party_menu.asm"
 
 IF GEN_2_GRAPHICS
 RedPicFront:: INCBIN "pic/gstrainer/red.pic"
+LeafPicFront:: INCBIN "pic/trainer/leaf.pic"
 rept 11 ; Padding
 	db 0
 endr
@@ -255,7 +258,9 @@ ENDC
 SECTION "NPC Sprites 2", ROMX, BANK[NPC_SPRITES_2]
 
 RedCyclingSprite:     INCBIN "gfx/sprites/cycling.2bpp"
+LeafCyclingSprite:    INCBIN "gfx/sprites/leafcycling.2bpp"
 RedSprite:            INCBIN "gfx/sprites/red.2bpp"
+LeafSprite:           INCBIN "gfx/sprites/leaf.2bpp"
 BlueSprite:           INCBIN "gfx/sprites/blue.2bpp"
 OakSprite:            INCBIN "gfx/sprites/oak.2bpp"
 BugCatcherSprite:     INCBIN "gfx/sprites/bug_catcher.2bpp"
@@ -277,8 +282,6 @@ SailorSprite:         INCBIN "gfx/sprites/sailor.2bpp"
 CookSprite:           INCBIN "gfx/sprites/cook.2bpp"
 BikeShopGuySprite:    INCBIN "gfx/sprites/bike_shop_guy.2bpp"
 MrFujiSprite:         INCBIN "gfx/sprites/mr_fuji.2bpp"
-GiovanniSprite:       INCBIN "gfx/sprites/giovanni.2bpp"
-RocketSprite:         INCBIN "gfx/sprites/rocket.2bpp"
 MediumSprite:         INCBIN "gfx/sprites/medium.2bpp"
 WaiterSprite:         INCBIN "gfx/sprites/waiter.2bpp"
 ErikaSprite:          INCBIN "gfx/sprites/erika.2bpp"
@@ -669,7 +672,11 @@ PidgeotPicBack:     INCBIN "pic/gsmonback/pidgeotb.pic"
 StarmiePicFront:    INCBIN "pic/gsmon/starmie.pic"
 StarmiePicBack:     INCBIN "pic/gsmonback/starmieb.pic"
 RedPicBack:         INCBIN "pic/gstrainer/redb.pic"
+LeafPicBack:        INCBIN "pic/trainer/leafb.pic"
 OldManPic:          INCBIN "pic/gstrainer/oldman.pic"
+LeafFishingTilesFront:     INCBIN "gfx/leaf_fishing_tile_front.2bpp"
+LeafFishingTilesBack:      INCBIN "gfx/leaf_fishing_tile_back.2bpp"
+LeafFishingTilesSide:      INCBIN "gfx/leaf_fishing_tile_side.2bpp"
 
 GastlyPicFront:     INCBIN "pic/gsmon/gastly.pic"
 GastlyPicBack:      INCBIN "pic/gsmonback/gastlyb.pic"

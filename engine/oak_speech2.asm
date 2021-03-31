@@ -1,5 +1,8 @@
 ChoosePlayerName:
 	call OakSpeechSlidePicRight
+	ld a, [wPlayerGender] ; Added gender check
+    and a
+    jr nz, .AreGirl ; Skip to girl names if you are a girl instead 
 	ld de, DefaultNamesPlayer
 	call DisplayIntroNameTextBox
 	ld a, [wCurrentMenuItem]
@@ -10,6 +13,17 @@ ChoosePlayerName:
 	ld de, wPlayerName
 	call OakSpeechSlidePicLeft
 	jr .done
+.AreGirl ; Copy of the boy naming routine, just with girl's names
+    ld de, DefaultNamesGirl
+    call DisplayIntroNameTextBox
+    ld a, [wCurrentMenuItem]
+    and a
+    jr z, .customName
+    ld hl, DefaultNamesGirlList
+    call GetDefaultName
+    ld de, wPlayerName
+    call OakSpeechSlidePicLeft
+    jr .done ; End of new Girl Names routine
 .customName
 	ld hl, wPlayerName
 	xor a ; NAME_PLAYER_SCREEN
@@ -22,6 +36,12 @@ ChoosePlayerName:
 	call Delay3
 	ld de, RedPicFront
 	ld b, BANK(RedPicFront)
+	ld a, [wPlayerGender] ; Added gender check
+    and a      ; Added gender check
+    jr z, .AreBoy3
+    ld de, LeafPicFront
+    ld b, BANK(LeafPicFront)
+.AreBoy3
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
@@ -194,6 +214,13 @@ DefaultNamesPlayer:
 	next "ASH"
 	next "JACK"
 	db   "@"
+	
+DefaultNamesGirl:
+    db   "NEW NAME"
+    next "KRISTAL"
+    next "RYOKO"
+    next "JACI"
+    db "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
@@ -210,6 +237,13 @@ DefaultNamesPlayer:
 	next "GARY"
 	next "JOHN"
 	db   "@"
+	
+DefaultNamesGirl:
+    db   "NEW NAME"
+    next "KRISTAL"
+    next "RYOKO"
+    next "JACI"
+    db "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
@@ -249,6 +283,11 @@ DefaultNamesPlayerList:
 	db "RED@"
 	db "ASH@"
 	db "JACK@"
+DefaultNamesGirlList:
+    db "NEW NAME@"
+    db "KRISTAL@"
+    db "RYOKO@"
+    db "JACI@"
 DefaultNamesRivalList:
 	db "NEW NAME@"
 	db "BLUE@"
@@ -261,6 +300,11 @@ DefaultNamesPlayerList:
 	db "BLUE@"
 	db "GARY@"
 	db "JOHN@"
+DefaultNamesGirlList:
+    db "NEW NAME@"
+    db "KRISTAL@"
+    db "RYOKO@"
+    db "JACI@"
 DefaultNamesRivalList:
 	db "NEW NAME@"
 	db "RED@"
