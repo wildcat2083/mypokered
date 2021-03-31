@@ -45,9 +45,9 @@ _StandByMeText::
 	
 _WizOfOzText::
     text "There's a movie"
-    line "on TV. All girls"
-    cont "dream of traveling"
-    cont "far away"
+    line "on TV. Lions and"
+    cont "tigers and Bears"
+    cont "Oh My!!!"
     
     para "I better go too."
     done
