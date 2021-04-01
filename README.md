@@ -6,4 +6,4 @@ Credit for the debug.asm and other tweaks goes to dannye and others who have hel
 
 if you want an easy installer option, move mon.sh outside of the "mypokered" folder and run it in linux shell
 
-Also A Already Built ROM can be found Here  https://github.com/wildcat2083/mypokered/releases
+A Pre-Built ROM can be found Here  https://github.com/wildcat2083/mypokered/releases
